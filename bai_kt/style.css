@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: white;
+}
+
+.tabs {
+    display: flex;
+    list-style: none;
+}
+
+.tab {
+    flex: 1;
+}
+
+.tab a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.tab.active a {
+    background-color: orange;
+}
+
+.tab:hover a {
+    background-color: red;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: purple;
+    color: white;
+    padding: 10px;
+}

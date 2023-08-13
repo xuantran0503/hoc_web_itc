@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="input" />
+<button onclick="normalize()">Chuẩn hóa</button>
+<button onclick="count()">Đếm ký tự</button>
+<button onclick="find()">Tìm cụm từ</button>
+<button onclick="replace()">Thay thế</button>
+<button onclick="remove()">Xóa</button>
+<button onclick="split()">Cắt</button>
+<div id="output"></div>
+<script>
+function normalize() {
+  var input = document.getElementById("input").value;
+  input = input.trim();
+  input = input.replace(/\s+/g, " ");
+  document.getElementById("output").innerHTML = input;
+}
+
+function count() {
+  var input = document.getElementById("input").value;
+  var length = input.length;
+  document.getElementById("output").innerHTML = "Số ký tự: " + length;
+}
+
+function find() {
+  var input = document.getElementById("input").value;
+  var count = input.match(/js/g).length;
+  document.getElementById("output").innerHTML = "Số lần xuất hiện của cụm từ 'js': " + count;
+}
+
+function replace() {
+  var input = document.getElementById("input").value;
+  input = input.replace(/js/g, "javascript");
+  document.getElementById("output").innerHTML = input;
+}
+
+function remove() {
+  var input = document.getElementById("input").value;
+  input = input.replace(/javascript/g, "");
+  document.getElementById("output").innerHTML = input;
+}
+
+function split() {
+  var input = document.getElementById("input").value;
+  var words = input.split(" ");
+  document.getElementById("output").innerHTML = words;
+}
+</script>
+</body>
+</html>

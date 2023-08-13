@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>String Methods Demo</h1>
+
+<p>The following code demonstrates the use of various string methods on the string `greeting`.</p>
+
+<script>
+var greeting = "Welcome to Nodemy, Nodemy is stand for Nodejs Academy";
+
+// Count the number of characters in the string
+console.log(greeting.length);
+
+// Find the position of the substring "nodemy"
+console.log(greeting.indexOf("nodemy"));
+
+// Find the position of the substring "Nodemy"
+console.log(greeting.indexOf("Nodemy"));
+
+// Check if the string starts with "Welcome"
+console.log(greeting.startsWith("Welcome"));
+
+// Get the substring "Academy"
+console.log(greeting.substring(10));
+
+// Split the string into words
+console.log(greeting.split(" "));
+
+// Trim the whitespace from the beginning and end of the string
+console.log(greeting.trim());
+
+// Check if the string contains the substring "Nodemy"
+console.log(greeting.includes("Nodemy"));
+
+// Replace the substring "Nodemy" with "NODEMY"
+console.log(greeting.replace("Nodemy", "NODEMY"));
+
+// Convert the string to uppercase
+console.log(greeting.toUpperCase());
+
+// Get the character at position 4
+console.log(greeting.charAt(4));
+</script>
+</body>
+</html>
+

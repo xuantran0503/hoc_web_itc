@@ -1,0 +1,189 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    /* Hiệu ứng cuộc trang scroll-behavior: smooth */
+    scroll-behavior: smooth;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.main-web{
+    width: 100%;
+    height: 100vh;
+    position: relative; 
+    background-color: #ccc;
+}
+#header{
+    position: fixed;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(62,62,156,1) 14%, rgba(0,212,255,1) 100%);
+    display: block;
+
+}
+#header .logo-text .logo{
+    background-image: url(./img/logo-ITC.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    
+}
+#header .logo{
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: 10px;
+	margin: 5px auto;
+}
+#header .heading{
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    color: rgb(9, 73, 38);
+    margin-bottom: 5px;
+}
+#header .navbar .list-item{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+	text-align: center;
+}
+.list-item .item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 60px;
+    border-radius: 73% 27% 70% 30% / 51% 66% 34% 49% ;
+    border: 5px solid #fff;
+    margin: 0 14px;
+    color: #fff;
+    font-weight: 600;
+}
+.list-item .item::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: 73% 27% 70% 30% / 51% 66% 34% 49% ;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(62,62,156,1) 14%, rgba(0,212,255,1) 100%);
+    opacity: 0.2;
+}
+#banner{
+    position: relative;
+}
+#banner .banner-img{
+    background-image: url(./img/banner.jpg);
+    width: 80%;
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 15px;
+    position: absolute;
+    top: 0; 
+    left: 10%;
+    border: 10px solid #fff;
+    border-radius: 8px; 
+}
+#banner .banner-img .left-box-1{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 180px solid rgba(131,58,180,0.9);
+    border-right:70px solid transparent;
+    height: 0;
+    width: 300px;
+    z-index: 3;
+}
+
+#banner .banner-img .left-box-2{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 120px solid #1E90FF;
+    border-right:50px solid transparent;
+    height: 0;
+    width: 350px;
+    z-index: 2;
+}
+.text-left{
+    position: absolute;
+    left: 36px;
+    top: 10px;
+    font-size: 20px;
+}
+.fa-solid{
+    font-size: 30px;
+    
+}
+.icon-left{
+    position: absolute;
+    right: -26px;
+    bottom: -165px;
+    height: 45px;
+    width: 45px;
+    color: #fff;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+.name-item{
+    font-weight: 600;
+    color: rgb(225, 225, 21);
+    padding: 5px 0;
+    font-family: 'Style Script', cursive;
+}
+/* Mini list */
+#header .subnav-2{
+    display: none;
+}
+#header .navbar .item:hover .subnav-2{
+    display: block;
+}
+#header .navbar .item:hover{
+    background-color: rgb(242, 180, 66);
+}
+#header .navbar .item:hover .subnav-2{
+    width: 289px;
+    display: flex;
+    text-align: center;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -90px;
+    left: -65px;
+}
+.mini-list{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 58% 42% 84% 16% / 66% 53% 47% 34% ;
+    border: 5px solid #fff;
+    margin: 0 5px;
+    color: #fff;
+    font-weight: 600;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+}
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+};
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài 8</title>
+</head>
+<body>
+    <input type="text" id="numbers" placeholder="Nhập mảng số nguyên (cách nhau bằng dấu phẩy)">
+    <button onclick="findMostFrequent()">Tìm Số Xuất Hiện Nhiều Nhất</button>
+    <p id="result"></p>
+
+    <script>
+        function findMostFrequent() {
+            const input = document.getElementById('numbers').value;
+            const numbers = input.split(',').map(Number);
+            if (numbers.length === 0) {
+                document.getElementById('result').innerText = 'Vui lòng nhập mảng số nguyên.';
+                return;
+            }
+            const counts = {};
+            let mostFrequent = null;
+            let maxCount = 0;
+
+            for (const num of numbers) {
+                if (counts[num] === undefined) {
+                    counts[num] = 1;
+                } else {
+                    counts[num]++;
+                }
+                if (counts[num] > maxCount) {
+                    maxCount = counts[num];
+                    mostFrequent = num;
+                }
+            }
+
+            document.getElementById('result').innerText = `Số xuất hiện nhiều nhất: ${mostFrequent}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài 2</title>
+</head>
+<body>
+    <input type="text" id="numbers" placeholder="Nhập mảng số nguyên (cách nhau bằng dấu phẩy)">
+    <button onclick="findMaxIndices()">Tìm Vị Trí Số Max</button>
+    <p id="result"></p>
+
+    <script>
+        function findMaxIndices() {
+            const input = document.getElementById('numbers').value;
+            const numbers = input.split(',').map(Number);
+            if (numbers.length === 0) {
+                document.getElementById('result').innerText = 'Vui lòng nhập mảng số nguyên.';
+                return;
+            }
+            const max = Math.max(...numbers);
+            const indices = [];
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] === max) {
+                    indices.push(i);
+                }
+            }
+            document.getElementById('result').innerText = `Vị trí của số lớn nhất (${max}): ${indices.join(', ')}`;
+        }
+    </script>
+</body>
+</html>

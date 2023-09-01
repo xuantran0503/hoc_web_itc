@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài 3</title>
+</head>
+<body>
+    <input type="text" id="numbers" placeholder="Nhập mảng số nguyên (cách nhau bằng dấu phẩy)">
+    <button onclick="calculateAverage()">Tính Trung Bình Cộng</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateAverage() {
+            const input = document.getElementById('numbers').value;
+            const numbers = input.split(',').map(Number);
+            if (numbers.length === 0) {
+                document.getElementById('result').innerText = 'Vui lòng nhập mảng số nguyên.';
+                return;
+            }
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+            const average = sum / numbers.length;
+            document.getElementById('result').innerText = `Trung bình cộng: ${average}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quay Số May Mắn</title>
+</head>
+<body>
+    <h1>Ngày Tháng Năm Hôm Nay</h1>
+    <p id="currentDate"></p>
+
+    <h1>Quay Số May Mắn</h1>
+    <p id="luckyDrawResult"></p>
+
+    <button onclick="displayCurrentDate()">Hiển Thị Ngày</button>
+    <button onclick="luckyDraw()">Quay Số May Mắn</button>
+
+    <script>
+        function displayCurrentDate() {
+            var currentDate = new Date();
+            var day = currentDate.getDate();
+            var month = currentDate.getMonth() + 1; 
+            var year = currentDate.getFullYear();
+
+            var formattedDate = day + '-' + month + '-' + year;
+            document.getElementById("currentDate").innerHTML = "Ngày hôm nay: " + formattedDate;
+        }
+
+        var gift = [
+            'Bạn đen lắm',
+            '10 coin',
+            '20 coin',
+            '30 coin',
+            'Giải khuyến khích',
+            'Giải nhì',
+            'Giải nhất',
+            'Giải đặc biệt (^.^)'
+        ];
+
+        function luckyDraw() {
+            var randomIndex = Math.floor(Math.random() * gift.length);
+            var luckyGift = gift[randomIndex];
+            document.getElementById("luckyDrawResult").innerHTML = "Chúc mừng bạn đã trúng: " + luckyGift;
+        }
+    </script>
+</body>
+</html>

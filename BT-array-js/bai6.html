@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài 6</title>
+</head>
+<body>
+    <input type="text" id="numbers" placeholder="Nhập mảng số nguyên (cách nhau bằng dấu phẩy)">
+    <button onclick="findLargestNegative()">Tìm Số Âm Lớn Nhất</button>
+    <p id="result"></p>
+
+    <script>
+        function findLargestNegative() {
+            const input = document.getElementById('numbers').value;
+            const numbers = input.split(',').map(Number);
+            if (numbers.length === 0) {
+                document.getElementById('result').innerText = 'Vui lòng nhập mảng số nguyên.';
+                return;
+            }
+            const negatives = numbers.filter(num => num < 0);
+            if (negatives.length === 0) {
+                document.getElementById('result').innerText = 'NOT FOUND';
+                return;
+            }
+            const maxNegative = Math.max(...negatives);
+            document.getElementById('result').innerText = `Số âm lớn nhất: ${maxNegative}`;
+        }
+    </script>
+</body>
+</html>

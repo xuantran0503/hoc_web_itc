@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chức năng xử lý chuỗi</title>
+</head>
+<body>
+    <input type="text" id="inputString" placeholder="Nhập chuỗi">
+    <br>
+    <button onclick="chuanHoaChuoi()">Chuẩn hóa chuỗi</button>
+    <button onclick="demKiTu()">Đếm kí tự</button>
+    <button onclick="timTuITC()">Tìm từ 'itc'</button>
+    <button onclick="thayTheITC()">Thay thế 'itc' thành 'ITC'</button>
+    <br>
+    <p id="result"></p>
+
+    <script>
+        function chuanHoaChuoi() {
+            var inputElement = document.getElementById("inputString");
+            var inputValue = inputElement.value;
+            var normalizedValue = inputValue.toLowerCase().trim();
+            inputElement.value = normalizedValue;
+            document.getElementById("result").innerText = "Chuỗi đã được chuẩn hóa: " + normalizedValue;
+        }
+
+        function demKiTu() {
+            var inputElement = document.getElementById("inputString");
+            var inputValue = inputElement.value;
+            var characterCount = inputValue.length;
+            document.getElementById("result").innerText = "Số kí tự trong chuỗi: " + characterCount;
+        }
+
+        function timTuITC() {
+            var inputElement = document.getElementById("inputString");
+            var inputValue = inputElement.value.toLowerCase();
+            var wordCount = (inputValue.match(/\bitc\b/g) || []).length;
+            document.getElementById("result").innerText = "Từ 'itc' xuất hiện " + wordCount + " lần trong chuỗi.";
+        }
+
+        function thayTheITC() {
+            var inputElement = document.getElementById("inputString");
+            var inputValue = inputElement.value;
+            var replacedValue = inputValue.replace(/itc/g, "ITC");
+            inputElement.value = replacedValue;
+            document.getElementById("result").innerText = "Chuỗi sau khi thay thế: " + replacedValue;
+        }
+    </script>
+</body>
+</html>

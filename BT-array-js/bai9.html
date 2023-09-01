@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài 9</title>
+</head>
+<body>
+    <button onclick="checkAnimals()">Kiểm Tra và Xử Lý Mảng Animals</button>
+    <p id="result"></p>
+
+    <script>
+        const animals = ["Rat", "Dog", "Cat", "Fish"];
+
+        function checkAnimals() {
+            // Bài 9.1: Kiểm tra và in các phần tử Rat hoặc Tiger
+            for (const animal of animals) {
+                if (animal === "Rat" || animal === "Tiger") {
+                    console.log(animal);
+                }
+            }
+
+            // Bài 9.2: Kiểm tra và thêm Bird và Spider nếu có con Dog
+            if (animals.includes("Dog")) {
+                animals.push("Bird", "Bird", "Spider");
+                console.log(animals);
+            }
+
+            // Bài 9.3: Kiểm tra và thay thế con Cat bằng con Elephant
+            let i = 0;
+            while (i < animals.length) {
+                if (animals[i] === "Cat") {
+                    animals[i] = "Elephant";
+                    console.log(animals);
+                    break;
+                }
+                i++;
+            }
+
+            // Bài 9.4: Xóa tất cả con Fish ra khỏi mảng
+            let j = 0;
+            do {
+                if (animals[j] === "Fish") {
+                    animals.splice(j, 1);
+                } else {
+                    j++;
+                }
+            } while (j < animals.length);
+
+            // Hiển thị kết quả cuối cùng
+            document.getElementById('result').innerText = `Mảng Animals cuối cùng: ${animals.join(', ')}`;
+        }
+    </script>
+</body>
+</html>

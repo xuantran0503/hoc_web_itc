@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sắp xếp mảng</title>
+</head>
+<body>
+    <script>
+        
+        var numbers = [2, 5, 12, 4, 99, 8];
+
+        
+        var ascendingOrder = numbers.slice().sort(function(a, b) {
+            return a - b;
+        });
+
+        
+        var descendingOrder = numbers.slice().sort(function(a, b) {
+            return b - a;
+        });
+
+        document.write("Mảng tăng dần: " + ascendingOrder + "<br>");
+        document.write("Mảng giảm dần: " + descendingOrder + "<br>");
+    </script>
+</body>
+</html>

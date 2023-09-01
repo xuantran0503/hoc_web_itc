@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Constructor Example</title>
+</head>
+<body>
+    <script>
+        
+        function Person(firstName, lastName, age, address, score) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.address = address;
+            this.score = score;
+        }
+
+        
+        var Nam = new Person("Nam", "Nguyen", 25, "123 Main St", 85);
+        var Hoa = new Person("Hoa", "Tran", 30, "456 Elm St", 90);
+        var Mai = new Person("Mai", "Le", 28, "789 Oak St", 88);
+        var Dung = new Person("Dung", "Pham", 27, "101 Pine St", 92);
+        var Hanh = new Person("Hanh", "Do", 29, "222 Maple St", 87);
+
+        
+        Nam.className = "Student";
+        Hoa.className = "Teacher";
+        Mai.className = "Student";
+        Dung.className = "Student";
+        Hanh.className = "Teacher";
+
+        Person.prototype.getFullName = function() {
+            return this.firstName + " " + this.lastName;
+        };
+
+        
+        console.log(Nam);
+        console.log("Full Name: " + Nam.getFullName());
+
+        console.log(Hoa);
+        console.log("Full Name: " + Hoa.getFullName());
+
+        console.log(Mai);
+        console.log("Full Name: " + Mai.getFullName());
+
+        console.log(Dung);
+        console.log("Full Name: " + Dung.getFullName());
+
+        console.log(Hanh);
+        console.log("Full Name: " + Hanh.getFullName());
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chức năng xử lý chuỗi</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        
+        var learning = "ITC xin chao, hoc JS co ban cung ITC nhe, JS JS va JS;";
+
+       
+        var outputDiv = document.getElementById("output");
+
+        
+        var length = learning.length;
+        outputDiv.innerHTML += "- Chuỗi có " + length + " kí tự.<br>";
+
+        
+        var lastIndex = learning.lastIndexOf("ITC");
+        outputDiv.innerHTML += "- Vị trí của chữ ITC cuối cùng trong chuỗi là " + lastIndex + "<br>";
+
+        
+        var words = learning.split(" ");
+        outputDiv.innerHTML += "- Các từ trong chuỗi:<br>";
+        for (var i = 0; i < words.length; i++) {
+            outputDiv.innerHTML += words[i] + "<br>";
+        }
+
+       
+        var replacedString = learning.replace(/JS/g, "Javascript");
+        outputDiv.innerHTML += "- Chuỗi sau khi thay thế:<br>" + replacedString + "<br>";
+
+        
+        var hasJS = learning.includes("JS");
+        outputDiv.innerHTML += "- Có chữ JS trong chuỗi: " + hasJS + "<br>";
+    </script>
+</body>
+</html>
